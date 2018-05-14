@@ -67,7 +67,7 @@ jobs:
                             --format progress \
                             $TEST_FILES
 
-      -run:
+      - run:
           name: run rubocop
           command: rubocop -c .rubocop.yml -f h -o /tmp/rubocop/report.html
 
