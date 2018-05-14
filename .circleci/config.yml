@@ -66,9 +66,10 @@ jobs:
                             --out /tmp/test-results/rspec.xml \
                             --format progress \
                             $TEST_FILES
+
       -run:
-        name: run rubocop
-        command: rubocop -c .rubocop.yml -f h -o /tmp/rubocop/report.html
+          name: run rubocop
+          command: rubocop -c .rubocop.yml -f h -o /tmp/rubocop/report.html
 
       # collect reports
       - store_test_results:
