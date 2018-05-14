@@ -80,6 +80,7 @@ jobs:
 
       - store_artifacts:
           path: /tmp/rubocop
+          destination: rubocop
 
       - run: bash .circleci/setup-heroku.sh
       - add_ssh_keys:
