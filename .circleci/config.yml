@@ -46,7 +46,7 @@ jobs:
 
       # Database setup
       - run:
-          name: Set up DB
+          name: set up DB
           # command: |
             # bundle exec rake db:create db:schema:load --trace
             # bundle exec rake db:migrate
@@ -66,6 +66,9 @@ jobs:
                             --out /tmp/test-results/rspec.xml \
                             --format progress \
                             $TEST_FILES
+      -run:
+        name: run rubocop
+        command: rubocop -c .rubocop.yml -f h -o /tmp/rubocop/report.html
 
       # collect reports
       - store_test_results:
@@ -73,6 +76,9 @@ jobs:
       - store_artifacts:
           path: /tmp/test-results
           destination: test-results
+
+      - store_artifacts:
+          path: /tmp/rubocop
 
       - run: bash .circleci/setup-heroku.sh
       - add_ssh_keys:
