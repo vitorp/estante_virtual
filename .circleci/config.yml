@@ -48,10 +48,8 @@ jobs:
       # Database setup
       - run:
           name: set up DB
-          # command: |
-            # bundle exec rake db:create db:schema:load --trace
-            # bundle exec rake db:migrate
-          command: bundle exec rake db:create
+          command: |
+            bundle exec rake db:create db:schema:load --trace
 
       # run tests!
       - run:
@@ -62,7 +60,7 @@ jobs:
 
             COVERAGE=true COVERAGE_DIR=./tmp/coverage bundle exec rspec --format progress \
                             --format RspecJunitFormatter \
-                            --out /tmp/test-results/rspec.xml \
+                            --out /tmp/test-results/rspec/results.xml \
                             --format progress \
                             $TEST_FILES
 
