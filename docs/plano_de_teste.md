@@ -13,13 +13,13 @@ a funcionalidade do sistema e de suas operações principais de acordo com as hi
 Os testes serão divididos em duas etapas: Desenvolvimento e Entrega(Datas especificadas no plano de desenvolvimento). Durante o desenvolvimento os testes serão realizados
 antes da implementação da funcionalidade seguindo a metodologia TDD. Esses teste terão caráter unitário e servem para garantia de qualidade, documentação e para guiar os
 desenvolvedores durante o processo de desenvolvimento. Ao final da implementação de uma funcionalidade além dos testes centrais deve-se possuir testes para os critérios
-de aceitação. Na segunda etapa da Entrega as histórias de usuário serão revisadas manualmente em um ambiente de teste afim de testar a integração do sistema.
+de aceitação. Na segunda etapa ,a de Entrega, as histórias de usuário serão revisadas sobre a perspectiva de apresentação e integração utilizando smoke tests.
 
 ## Ferramentas utilizadas
 A cobertura de teste será verificada com a ferramenta "simplecov" que gera relatórios do percentual de cobertura total do sistema e discriminada também.
 O Framework de teste utilizado será o "RSPEC" e para analise estática utilizaremos o "Rubocop". Todas essas ferramentas serão executadas na integração
 continua e com isso existirá um histórico de testes. Por ultimo os testes de integração realizados na entrega utilizarão o ambiente heroku para simulação
-de um deploy e acesso de usuário.
+de um deploy e acesso de usuário. Por último os smoke tests de apresentação e integração vão ser realizados utilizando "capybara".
 
 ## Critérios de avaliação
 - Testes para model, view e controller
