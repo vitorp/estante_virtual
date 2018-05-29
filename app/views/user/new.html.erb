@@ -1,7 +1,21 @@
-<%= form_for @user, url: users_path do |f| %>
-  <%= f.text_field :name %>
-  <%= f.text_field :nickname %>
-  <%= f.password_field :password %>
-  <%= f.telephone_field :phone %>
-  <%= f.submit "Cadastrar" %>
-<% end %>
+<div class="container user-form">
+  <%= form_for @user, url: users_path do |f| %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name , class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :nickname %>
+      <%= f.text_field :nickname , class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :phone %>
+      <%= f.telephone_field :phone , class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :password %>
+      <%= f.password_field :password , class: "form-control" %>
+    </div>
+    <%= f.submit "Cadastrar", class: "btn btn-primary" %>
+  <% end %>
+</div>
