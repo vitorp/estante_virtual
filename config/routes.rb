@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'books/new'
-  get 'books/create'
-  get 'books/show'
+  resources :books, only: [:create, :new, :show]
   root to: "welcome#home"
 end
