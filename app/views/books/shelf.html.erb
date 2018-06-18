@@ -1,14 +1,14 @@
 <div class="container" style="height: 100%;">
   <div class="card-deck" style="height: 100%; align-items: center;">
-    <% @books.each do |book|%>
+    <% @books.each do |book| %>
       <div class="card" >
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><strong>Título:</strong> <%= book.title %></li>
-          <li class="list-group-item"><strong>Autor:</strong><%= book.author %></li>
-          <li class="list-group-item"><strong>Data de publicação:</strong><%= book.publication_date %></li>
-          <li class="list-group-item"><strong>Código:</strong><%= book.code %></li>
-          <li class="list-group-item"><strong>Gênero:</strong><%= book.genre %></li>
-        </ul>
+        <div class="card-header">
+          <%= book.title %>
+        </div>
+        <div class="card-body">
+          <p class="card-text"><%= book.author %></p>
+          <%= link_to "Detalhes do livro", book_path(book) %>
+        </div>
       </div>
     <% end %>
   </div>
