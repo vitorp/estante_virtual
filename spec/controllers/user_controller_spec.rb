@@ -23,4 +23,16 @@ RSpec.describe UserController, type: :controller do
       expect(session[:current_user_id]).to eq(assigns(:user).id)
     end
   end
+
+  describe "GET #show" do
+    let(:user) { User.create(name: "User", nickname: "user_nick", password: "senha", phone: "123456789") }
+    subject { get :show, params: {id: user.id} }
+
+    it { is_expected.to have_http_status(:success) }
+
+    it "assigns the correct user" do
+      subject
+      expect(assigns(:user)).to eql(user)
+    end
+  end
 end
