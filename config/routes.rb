@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get "/users/home", to: "user#home", as: "user_home"
   get "/users/new", to: "user#new", as: "new_user"
   post "/login", to: "welcome#login", as: "login"
+
+  get "/shelf", to: "books#shelf", as: "shelf"
 end

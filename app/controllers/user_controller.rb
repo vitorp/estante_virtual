@@ -12,6 +12,8 @@ class UserController < ApplicationController
     redirect_to user_home_path
   end
 
+  private
+
   def user_params
     params.require(:user).permit(:name, :password, :nickname, :phone)
   end

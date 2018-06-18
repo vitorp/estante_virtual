@@ -20,6 +20,10 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
 
+  def shelf
+    @books = current_user.books
+  end
+
   private
 
   def book_params

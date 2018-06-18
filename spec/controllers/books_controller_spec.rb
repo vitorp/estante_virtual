@@ -11,12 +11,13 @@ RSpec.describe BooksController, type: :controller do
             code:             "codigo",
             genre:            "genero"}}
   }
+
   let(:user) { User.create(name: "User", nickname: "user_nick", password: "senha", phone: "123456789") }
+
   describe "GET #new" do
-    it "returns http success" do
-      get :new
-      expect(response).to have_http_status(:success)
-    end
+    subject { get :new }
+
+    it { is_expected.to have_http_status(:success) }
   end
 
   describe "POST #create" do
@@ -31,5 +32,15 @@ RSpec.describe BooksController, type: :controller do
       controller.login_user(user)
       expect(subject).to redirect_to(book_path(assigns(:book)))
     end
+  end
+
+  describe "GET #shelf" do
+    subject { get :shelf }
+
+    before(:each) do
+      controller.login_user(user)
+    end
+
+    it { is_expected.to have_http_status(:success) }
   end
 end
