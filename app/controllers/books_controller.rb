@@ -7,7 +7,7 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.new(book_params)
-    # @book.user = current_user
+    @book.user = current_user
 
     if @book.save
       redirect_to @book, notice: "Livro foi cadastrado com sucesso"

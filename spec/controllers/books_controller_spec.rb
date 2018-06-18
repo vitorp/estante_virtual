@@ -20,7 +20,8 @@ RSpec.describe BooksController, type: :controller do
   end
 
   describe "POST #create" do
-    xit "creates a new book" do
+    it "creates a new book" do
+      controller.login_user(user)
       expect {
         post :create, params: book_params
       }.to change(Book, :count).by(1)
