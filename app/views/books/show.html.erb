@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Título:</strong>
+  <%= @book.title %>
+</p>
+
+<p>
+  <strong>Autor:</strong>
+  <%= @book.author %>
+</p>
+
+<p>
+  <strong>Data de publicação:</strong>
+  <%= @book.publication_date %>
+</p>
+
+<p>
+  <strong>Código:</strong>
+  <%= @book.code %>
+</p>
+
+<p>
+  <strong>Gênero:</strong>
+  <%= @book.genre %>
+</p>
+
+<%= link_to 'Voltar', books_path %>

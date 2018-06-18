@@ -48,6 +48,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'rspec_junit_formatter'
   gem 'rubocop'
+  gem 'rspec-mocks'
 end
 
 group :development do
