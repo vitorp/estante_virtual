@@ -4,11 +4,16 @@ class Book < ApplicationRecord
   belongs_to :user
   has_many :reviews, dependent: :destroy
 
-  validates_uniqueness_of :title
+  validates :title, uniqueness: true
 
-  validates_presence_of :title
-  validates_presence_of :author
-  validates_presence_of :code
-  validates_presence_of :publication_date
-  validates_presence_of :genre
+  validates :title, presence: true
+  validates :author, presence: true
+  validates :code, presence: true
+  validates :publication_date, presence: true
+  validates :genre, presence: true
+  validate :book_count, if: ->(obj) { obj.user.present? }
+
+  def book_count
+    errors.add(:base, "Limite de 10 livros cadastrados") if user.books.count > 9
+  end
 end
