@@ -24,6 +24,28 @@ class BooksController < ApplicationController
     @books = current_user.books
   end
 
+  def setup_trade
+    book = Book.find(params[:id])
+    book.tradable = true
+
+    if book.save
+      redirect_to shelf_path, success: "Livro foi disponibilizado para troca"
+    else
+      redirect_to shelf_path, error: "Ops! parece que ocorreu um erro"
+    end
+  end
+
+  def remove_trade
+    book = Book.find(params[:id])
+    book.tradable = false
+
+    if book.save
+      redirect_to shelf_path, success: "Livro foi removido de trocas"
+    else
+      redirect_to shelf_path, error: "Ops! parece que ocorreu um erro"
+    end
+  end
+
   private
 
   def book_params
