@@ -19,7 +19,13 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def user_search
+  def search
+    user = User.find_by nickname: params[:nickname]
+    if user
+      redirect_to user_path(user)
+    else
+      render :index, error: "Usuário não encontrado"
+    end
   end
 
   private

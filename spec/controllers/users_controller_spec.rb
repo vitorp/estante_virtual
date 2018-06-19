@@ -14,9 +14,7 @@ RSpec.describe UsersController, type: :controller do
       expect { subject }.to change(User, :count).by 1
     end
 
-    it "redirects to user home" do
-      expect(subject).to redirect_to(user_home_path)
-    end
+    it { is_expected.to redirect_to(user_home_path) }
 
     it "stores current_user in session" do
       subject
@@ -40,5 +38,14 @@ RSpec.describe UsersController, type: :controller do
     subject { get :index }
 
     it { is_expected.to have_http_status(:success) }
+  end
+
+  describe "GET #search" do
+    let!(:user) { User.create(name: "Uriel Silva", nickname: "Billy", password: "senha", phone: "999994317") }
+
+    subject { get :search, params: {nickname: user.nickname} }
+
+    it { is_expected.to have_http_status(:redirect) }
+    it { is_expected.to redirect_to(user_path(user)) }
   end
 end

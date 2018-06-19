@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "/users/home", to: "users#home", as: "user_home"
   get "/users/new", to: "users#new", as: "new_user"
   get "/users/:id", to: "users#show", as: "user"
+  get "/users/:nickname", to: "users#search", as: "users_search"
 
   post "/login", to: "welcome#login", as: "login"
   get "/books/:id/setup-trade", to: "books#setup_trade", as: "setup_trade"
