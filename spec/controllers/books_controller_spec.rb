@@ -32,15 +32,15 @@ RSpec.describe BooksController, type: :controller do
   describe "POST #create" do
     subject { post :create, params: book_params }
 
-    it "creates a new book" do
+    before(:each) do
       controller.login_user(user)
+    end
+
+    it "creates a new book" do
       expect { subject }.to change(Book, :count).by(1)
     end
 
-    it "redirects to books show" do
-      controller.login_user(user)
-      expect(subject).to redirect_to(book_path(assigns(:book)))
-    end
+    it { is_expected.to redirect_to(book_path(assigns(:book))) }
   end
 
   describe "GET #shelf" do
