@@ -35,4 +35,10 @@ RSpec.describe UserController, type: :controller do
       expect(assigns(:user)).to eql(user)
     end
   end
+
+  describe "GET #index" do
+    subject { get :index }
+
+    it { is_expected.to have_http_status(:success) }
+  end
 end

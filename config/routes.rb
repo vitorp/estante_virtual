@@ -4,10 +4,13 @@ Rails.application.routes.draw do
   resources :books, only: [:create, :new, :show]
   resources :reviews, only: [:new, :create, :destroy]
 
-  post "/users", to: "user#create", as: "users"
+  post "/users", to: "user#create"
+  get "/users", to: "user#index"
   get "/users/home", to: "user#home", as: "user_home"
   get "/users/new", to: "user#new", as: "new_user"
   get "/users/:id", to: "user#show", as: "user"
+  # get "/users/"
+
   post "/login", to: "welcome#login", as: "login"
   get "/books/:id/setup-trade", to: "books#setup_trade", as: "setup_trade"
   get "/books/:id/remove-trade", to: "books#remove_trade", as: "remove_trade"

@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class UserController < ApplicationController
+  def index
+  end
+
   def new
     @user = User.new
   end
@@ -14,6 +17,9 @@ class UserController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+  end
+
+  def user_search
   end
 
   private
