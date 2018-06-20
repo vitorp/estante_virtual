@@ -16,6 +16,16 @@ class BooksController < ApplicationController
     end
   end
 
+  def destroy
+    book = Book.find(params[:id])
+
+    if (book.user == current_user) && book.destroy
+      redirect_to shelf_path, success: "Livro deletado com sucesso"
+    else
+      redirect_to shelf_path, error: "Ops! parece que ocorreu um erro"
+    end
+  end
+
   def show
     @book = Book.find(params[:id])
   end

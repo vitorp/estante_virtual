@@ -21,7 +21,7 @@ RSpec.describe BooksController, type: :controller do
                 user_id:          user.id)
   }
 
-  let(:user) { User.create(name: "User", nickname: "user_nick", password: "senha", phone: "123456789") }
+  let!(:user) { User.create(name: "User", nickname: "user_nick", password: "senha", phone: "123456789") }
 
   describe "GET #new" do
     subject { get :new }
@@ -68,6 +68,35 @@ RSpec.describe BooksController, type: :controller do
     it "turns book untradable" do
       subject
       expect(book.reload).to_not be_tradable
+    end
+  end
+
+  describe "DELETE #destroy" do
+    let(:not_owner) { User.create(name: "User", nickname: "user_nick", password: "senha", phone: "123456789") }
+    subject { delete :destroy, params: {id: book.id} }
+
+    it { is_expected.to have_http_status(:redirect) }
+
+    context "when logged as the owner" do
+      before(:each) do
+        controller.login_user(user)
+        book
+      end
+
+      it "deletes the book" do
+        expect { subject }.to change(Book, :count).by(-1)
+      end
+    end
+
+    context "when not logged as the owner" do
+      before(:each) do
+        controller.login_user(not_owner)
+        book
+      end
+
+      it "does not delete the book" do
+        expect { subject }.to change(Book, :count).by(0)
+      end
     end
   end
 end
