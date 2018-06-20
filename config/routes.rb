@@ -4,12 +4,11 @@ Rails.application.routes.draw do
   resources :books, only: [:create, :new, :show]
   resources :reviews, only: [:new, :create, :destroy]
 
-  post "/users", to: "users#create"
-  get "/users", to: "users#index"
-  get "/users/home", to: "users#home", as: "user_home"
-  get "/users/new", to: "users#new", as: "new_user"
-  get "/users/search", to: "users#search", as: "users_search"
-  get "/users/:id", to: "users#show", as: "user"
+  scope :users do
+    resources :users, only: [:index, :new, :show, :create]
+    get "/home", to: "users#home", as: "users_home"
+    get "/search", to: "users#search", as: "users_search"
+  end
 
   post "/login", to: "welcome#login", as: "login"
   get "/books/:id/setup-trade", to: "books#setup_trade", as: "setup_trade"

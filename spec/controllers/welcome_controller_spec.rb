@@ -21,7 +21,7 @@ RSpec.describe WelcomeController, type: :controller do
       end
 
       it "redirects to user home" do
-        expect(subject).to redirect_to(user_home_path)
+        expect(subject).to redirect_to(users_home_path)
       end
     end
 

@@ -14,7 +14,7 @@ RSpec.describe UsersController, type: :controller do
       expect { subject }.to change(User, :count).by 1
     end
 
-    it { is_expected.to redirect_to(user_home_path) }
+    it { is_expected.to redirect_to(users_home_path) }
 
     it "stores current_user in session" do
       subject

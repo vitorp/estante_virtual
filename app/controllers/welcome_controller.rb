@@ -9,7 +9,7 @@ class WelcomeController < ApplicationController
 
     if user.present?
       login_user(user)
-      redirect_to user_home_path
+      redirect_to users_home_path
     else
       flash[:error] ||= []
       flash[:error] << "Login inválido"

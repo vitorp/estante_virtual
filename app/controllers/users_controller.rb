@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.save
     login_user(@user)
-    redirect_to user_home_path
+    redirect_to users_home_path
   end
 
   def show
