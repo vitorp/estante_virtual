@@ -1,22 +1,30 @@
 <div class="container" style="height: 100%;">
+  <div class="section-title">
+    <h1>Estante de livros</h1>
+  </div>
   <div class="card-deck" style="height: 100%; align-items: center;">
-    <% @books.each do |book| %>
-      <div class="card" >
-        <div class="card-header">
-          <%= book.title %>
+    <div class="row">
+      <% @books.each do |book| %>
+        <div class="book-card col-md-4">
+          <div class="card" >
+            <div class="card-header">
+              <%= book.title %>
+            </div>
+            <div class="card-body">
+              <p class="card-text"><%= book.author %></p>
+              <%= link_to "Detalhes do livro", book_path(book) %>
+              <p>
+                <% if book.tradable %>
+                  <%= link_to "Remover livro de trocas", remove_trade_path(book) %>
+                <% else %>
+                  <%= link_to "Disponibilizar para trocas", setup_trade_path(book) %>
+                <% end %>
+              </p>
+              <p><%= link_to "Deletar livro", book_path(book), method: :delete %></p>
+            </div>
+          </div>
         </div>
-        <div class="card-body">
-          <p class="card-text"><%= book.author %></p>
-          <%= link_to "Detalhes do livro", book_path(book) %>
-          <p>
-            <% if book.tradable %>
-              <%= link_to "Remover livro de trocas", remove_trade_path(book) %>
-            <% else %>
-              <%= link_to "Disponibilizar para trocas", setup_trade_path(book) %>
-            <% end %>
-          </p>
-        </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
