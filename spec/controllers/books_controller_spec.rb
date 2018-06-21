@@ -99,4 +99,38 @@ RSpec.describe BooksController, type: :controller do
       end
     end
   end
+
+  describe "GET #search" do
+    subject { get :search, params: {id: book.id} }
+
+    it { is_expected.to have_http_status(:success) }
+  end
+
+  describe "GET #list_search" do
+    subject { get :list_search, params: {title: book.title} }
+
+    it { is_expected.to have_http_status(:success) }
+
+    context "when the book is tradable" do
+      before(:each) do
+        book.update(tradable: true)
+      end
+
+      it "finds the book" do
+        subject
+        expect(assigns(:books)).to eq([book])
+      end
+    end
+
+    context "when the book is untradable" do
+      before(:each) do
+        book.update(tradable: false)
+      end
+
+      it "finds the book" do
+        subject
+        expect(assigns(:books)).to eq([])
+      end
+    end
+  end
 end

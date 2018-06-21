@@ -34,6 +34,13 @@ class BooksController < ApplicationController
     @books = current_user.books
   end
 
+  def search
+  end
+
+  def list_search
+    @books = Book.where(tradable: true).where("title LIKE ?", "%#{params[:title]}%")
+  end
+
   def setup_trade
     book = Book.find(params[:id])
     book.tradable = true
