@@ -8,7 +8,12 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    @review.user = current_user
+    @review.assign_attributes user: current_user, book_id: params[:book_id]
+    if @review.save
+      redirect_to book_path(@review.book)
+    else
+      render :new
+    end
   end
 
   private

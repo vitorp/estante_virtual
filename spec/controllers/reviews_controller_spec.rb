@@ -14,9 +14,9 @@ RSpec.describe ReviewsController, type: :controller do
   }
   let(:review_params) {
     {review:
-             {title:   "Titulo",
-              body:    "body review",
-              book_id: book.id}}
+              {title: "Titulo",
+               body:  "body review"},
+     book_id: book.id}
   }
 
   describe "GET #new" do
@@ -27,7 +27,15 @@ RSpec.describe ReviewsController, type: :controller do
 
   describe "POST #create" do
     subject { post :create, params: review_params }
+    before(:each) do
+      controller.login_user(user)
+    end
 
-    xit { is_expected.to have_http_status(:redirect) }
+    it { is_expected.to have_http_status(:redirect) }
+    it { is_expected.to redirect_to(book_path(assigns(:review).book)) }
+
+    it "creates a record" do
+      expect { subject }.to change(Review, :count).by(1)
+    end
   end
 end
