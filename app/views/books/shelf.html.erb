@@ -21,7 +21,7 @@
                 <% end %>
               </p>
               <p><%= link_to "Deletar livro", book_path(book), method: :delete %></p>
-              <p><%= link_to "Escrever resenha", review_path(book) %></p>
+              <p><%= link_to "Escrever resenha", new_book_review_path(book) %></p>
             </div>
           </div>
         </div>
