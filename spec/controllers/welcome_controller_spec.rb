@@ -41,4 +41,23 @@ RSpec.describe WelcomeController, type: :controller do
       end
     end
   end
+
+  describe "GET #logout" do
+    subject { get :logout }
+
+    before(:each) do
+      user = User.create(name:     "Mateus",
+                         nickname: login_data[:login][:nickname],
+                         password: login_data[:login][:password],
+                         phone:    "999999999")
+      controller.login_user(user)
+    end
+
+    it { is_expected.to redirect_to(login_form_path) }
+
+    it "removes current_user from session" do
+      subject
+      expect(controller.current_user).to_not be_present
+    end
+  end
 end
