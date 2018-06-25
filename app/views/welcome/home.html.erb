@@ -1,6 +1,8 @@
-<div class="container center-content">
+<div class="container">
+  <div class="section-title">
+    <h1> Login </h1>
+  </div>
   <%= form_for :login, url: login_path, html: { class: "row" } do |f| %>
-    <h4 class="col-md-6 offset-md-3 text-center"> Login </h4>
     <% if flash[:error].present? %>
       <div class="alert alert-danger col-md-4 offset-md-4" role="alert">
         <ul>
@@ -11,11 +13,11 @@
       </div>
     <% end %>
     <div class="form-group col-md-6 offset-md-3">
-      <%= f.label :nickname %>
+      <%= f.label :nickname, "Apelido" %>
       <%= f.text_field :nickname , class: "form-control" %>
     </div>
     <div class="form-group col-md-6 offset-md-3">
-      <%= f.label :password %>
+      <%= f.label :password, "Senha" %>
       <%= f.password_field :password , class: "form-control" %>
     </div>
     <div class="col-md-2 offset-md-3">

@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def home    
+  def home
   end
 
   private
