@@ -17,6 +17,11 @@ class WelcomeController < ApplicationController
     end
   end
 
+  def logout
+    logout_user
+    redirect_to login_form_path, success: "Você saiu com sucesso"
+  end
+
   def login_params
     params.require(:login).permit(:nickname, :password)
   end

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :new, :show, :create]
 
   post "/login", to: "welcome#login", as: "login"
+  get "/logout", to: "welcome#logout", as: "logout"
 
   scope :books do
     get "/search", to: "books#search", as: "books_search"
