@@ -2,6 +2,7 @@
 
 class WelcomeController < ApplicationController
   skip_before_action :verify_logged_in, only: %i[home login]
+
   def home
   end
 
