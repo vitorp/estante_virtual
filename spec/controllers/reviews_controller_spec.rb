@@ -18,6 +18,9 @@ RSpec.describe ReviewsController, type: :controller do
                body:  "body review"},
      book_id: book.id}
   }
+  before(:each) do
+    controller.login_user(user)
+  end
 
   describe "GET #new" do
     subject { get :new, params: {book_id: book.id} }
@@ -27,9 +30,6 @@ RSpec.describe ReviewsController, type: :controller do
 
   describe "POST #create" do
     subject { post :create, params: review_params }
-    before(:each) do
-      controller.login_user(user)
-    end
 
     it { is_expected.to have_http_status(:redirect) }
     it { is_expected.to redirect_to(book_path(assigns(:review).book)) }

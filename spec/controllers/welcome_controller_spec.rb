@@ -31,13 +31,11 @@ RSpec.describe WelcomeController, type: :controller do
         expect(controller.current_user).to be_nil
       end
 
-      it "renders to login page" do
-        expect(subject).to render_template("welcome/home")
-      end
+      it { is_expected.to redirect_to login_form_path }
 
       it "sets an error message" do
         subject
-        expect(flash[:error]).to include("Login inválido")
+        expect(flash[:error]).to eq "Login inválido"
       end
     end
   end

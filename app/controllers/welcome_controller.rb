@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class WelcomeController < ApplicationController
+  skip_before_action :verify_logged_in, only: %i[home login]
   def home
   end
 
@@ -11,9 +12,7 @@ class WelcomeController < ApplicationController
       login_user(user)
       redirect_to users_home_path
     else
-      flash[:error] ||= []
-      flash[:error] << "Login inválido"
-      render :home
+      redirect_to login_form_path, error: "Login inválido"
     end
   end
 

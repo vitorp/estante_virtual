@@ -22,6 +22,9 @@ RSpec.describe BooksController, type: :controller do
   }
 
   let!(:user) { User.create(name: "User", nickname: "user_nick", password: "senha", phone: "123456789") }
+  before(:each) do
+    controller.login_user(user)
+  end
 
   describe "GET #new" do
     subject { get :new }

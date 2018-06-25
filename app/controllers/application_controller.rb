@@ -2,6 +2,8 @@
 
 class ApplicationController < ActionController::Base
   helper_method :current_user, :login_user
+  before_action :verify_logged_in
+  add_flash_types :success, :error, :notify
 
   def login_user(user)
     session[:current_user_id] = user.id
@@ -14,5 +16,9 @@ class ApplicationController < ActionController::Base
   def logout_user
     @current_user = nil
     session[:current_user_id] = nil
+  end
+
+  def verify_logged_in
+    redirect_to login_form_path, error: "Usuário deve estar logado para realizar essa ação." if current_user.blank?
   end
 end

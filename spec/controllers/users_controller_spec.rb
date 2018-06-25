@@ -7,9 +7,15 @@ RSpec.describe UsersController, type: :controller do
     {user:
            {name: "Uriel Silva", nickname: "Billy", password: "senha", phone: "999994317"}}
   }
+  let(:user) { User.create(name: "User", nickname: "user_nick", password: "senha", phone: "123456789") }
+
+  before(:each) do
+    controller.login_user(user)
+  end
 
   describe "POST #create" do
     subject { post :create, params: valid_attributes }
+
     it "creates a user" do
       expect { subject }.to change(User, :count).by 1
     end
@@ -23,7 +29,6 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe "GET #show" do
-    let(:user) { User.create(name: "User", nickname: "user_nick", password: "senha", phone: "123456789") }
     subject { get :show, params: {id: user.id} }
 
     it { is_expected.to have_http_status(:success) }
@@ -41,8 +46,6 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe "GET #search" do
-    let!(:user) { User.create(name: "Uriel Silva", nickname: "Billy", password: "senha", phone: "999994317") }
-
     subject { get :search, params: {nickname: user.nickname} }
 
     it { is_expected.to have_http_status(:redirect) }
