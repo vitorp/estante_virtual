@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>plano_de_teste - Rails Application Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Plano+de+teste">Plano de teste</a>
+    <li><a href="#label-Escopo">Escopo</a>
+    <li><a href="#label-Objetivos+de+teste">Objetivos de teste</a>
+    <li><a href="#label-Planejamento+de+teste">Planejamento de teste</a>
+    <li><a href="#label-Ferramentas+utilizadas">Ferramentas utilizadas</a>
+    <li><a href="#label-Crit-C3-A9rios+de+avalia-C3-A7-C3-A3o">Critérios de avaliação</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../README_md.html">README</a>
+  
+    <li><a href="../plans/plano_de_teste_md.html">plano_de_teste</a>
+  
+    <li><a href="../plans/plano_desenvolvimento_md.html">plano_desenvolvimento</a>
+  
+    <li><a href="../plans/processo_desenvolvimento_md.html">processo_desenvolvimento</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page plans/plano_de_teste.md">
+
+<h1 id="label-Plano+de+teste">Plano de teste<span><a href="#label-Plano+de+teste">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<h2 id="label-Escopo">Escopo<span><a href="#label-Escopo">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>O sistema estante virtual visa prover um meio virtual na web para trocas de
+livros. Apôs se cadastrarem os usuários terão acesso a buscas que visam
+facilitar a troca do livro além de uma estante pessoal para armazenar seus
+próprios livros.</p>
+
+<h2 id="label-Objetivos+de+teste">Objetivos de teste<span><a href="#label-Objetivos+de+teste">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Nesse projeto se utiliza a arquitetura MVC, logo os models, views e
+controllers são prioridades. Nessas camadas deve ser alcançada uma
+cobertura de 80% na suite de teste para uma garantia de qualidade. Os
+testes devem garantir a funcionalidade do sistema e de suas operações
+principais de acordo com as histórias de usuário e critérios de aceitação
+das mesmas.</p>
+
+<h2 id="label-Planejamento+de+teste">Planejamento de teste<span><a href="#label-Planejamento+de+teste">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Os testes serão divididos em duas etapas: Desenvolvimento e Entrega(Datas
+especificadas no plano de desenvolvimento). Durante o desenvolvimento os
+testes serão realizados antes da implementação da funcionalidade seguindo a
+metodologia TDD. Esses teste terão caráter unitário e servem para garantia
+de qualidade, documentação e para guiar os desenvolvedores durante o
+processo de desenvolvimento. Ao final da implementação de uma
+funcionalidade além dos testes centrais deve-se possuir testes para os
+critérios de aceitação. Na segunda etapa ,a de Entrega, as histórias de
+usuário serão revisadas sobre a perspectiva de apresentação e integração
+utilizando smoke tests.</p>
+
+<h2 id="label-Ferramentas+utilizadas">Ferramentas utilizadas<span><a href="#label-Ferramentas+utilizadas">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>A cobertura de teste será verificada com a ferramenta “simplecov” que gera
+relatórios do percentual de cobertura total do sistema e discriminada
+também. O Framework de teste utilizado será o “RSPEC” e para analise
+estática utilizaremos o “Rubocop”. Todas essas ferramentas serão executadas
+na integração continua e com isso existirá um histórico de testes. Por
+ultimo os testes de integração realizados na entrega utilizarão o ambiente
+heroku para simulação de um deploy e acesso de usuário. Por último os smoke
+tests de apresentação e integração vão ser realizados utilizando
+“capybara”.</p>
+
+<h2 id="label-Crit-C3-A9rios+de+avalia-C3-A7-C3-A3o">Critérios de avaliação<span><a href="#label-Crit-C3-A9rios+de+avalia-C3-A7-C3-A3o">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Testes para model, view e controller</p>
+</li><li>
+<p>Cobertura acima de 80%</p>
+</li><li>
+<p>Casos de testes para critérios de aceitação</p>
+</li></ul>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://rdoc.github.io/rdoc">RDoc</a> 5.0.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

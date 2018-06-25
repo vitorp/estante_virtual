@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>plano_desenvolvimento - Rails Application Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Processo+de+desenvolvimento">Processo de desenvolvimento</a>
+    <li><a href="#label-Ciclo+de+desenvolvimento">Ciclo de desenvolvimento</a>
+    <li><a href="#label-Test+Driven+Development">Test Driven Development</a>
+    <li><a href="#label-M-C3-A9todos+para+garantia+de+qualidade+no+processo+de+desenvolvimento">Métodos para garantia de qualidade no processo de desenvolvimento</a>
+    <li><a href="#label-Ferramentas">Ferramentas</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../README_md.html">README</a>
+  
+    <li><a href="../plans/plano_de_teste_md.html">plano_de_teste</a>
+  
+    <li><a href="../plans/plano_desenvolvimento_md.html">plano_desenvolvimento</a>
+  
+    <li><a href="../plans/processo_desenvolvimento_md.html">processo_desenvolvimento</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page plans/plano_desenvolvimento.md">
+
+<h2 id="label-Processo+de+desenvolvimento">Processo de desenvolvimento<span><a href="#label-Processo+de+desenvolvimento">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Esse processo de desenvolvimento é embasado na utilização de métodos ágeis
+e desenvolvimento com foco em teste para garantia de qualidade. Utilizando
+como maiores influências SCRUM e TDD (Test driven development) adaptamos as
+suas práticas e principios para melhor suprir nossas necessidades e
+alcançar nossos objetivos.</p>
+
+<h2 id="label-Ciclo+de+desenvolvimento">Ciclo de desenvolvimento<span><a href="#label-Ciclo+de+desenvolvimento">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>O desenvolvimento será dividido em sprints semanais. Para isso será
+realizada uma reunião de sprint toda semana a fim de avaliar o que foi
+feito e planejar a próxima iteração. Através de um Kanban, as tarefas serão
+acompanhadas durante a semana em listas de BACKLOG, TO DO, DOING, REVIEW e
+DONE. As tarefas finalizadas se encontrarão na lista de aceitação, serão
+revisadas na reunião de sprint e movidas para DONE quando terminadas.</p>
+
+<h2 id="label-Test+Driven+Development">Test Driven Development<span><a href="#label-Test+Driven+Development">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>A metodologia do TDD manterá o foco do desenvolvimento em testes. Os testes
+são feitos antes do código propriamente dito para garantir uma maior
+cobertura e incentivar os desenvolvedores a pensarem nos casos limites.</p>
+
+<h2 id="label-M-C3-A9todos+para+garantia+de+qualidade+no+processo+de+desenvolvimento">Métodos para garantia de qualidade no processo de desenvolvimento<span><a href="#label-M-C3-A9todos+para+garantia+de+qualidade+no+processo+de+desenvolvimento">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Para garantia da qualidade quando as tarefas foram elencadas atribui-se a
+elas critérios de aceitação, ou seja, requerimentos de qualidade e
+completude da tarefa. Esses critérios serão revisados na reunião de sprint
+e se satisfeitos a tarefa será movida para DONE, se não, voltará para o
+backlog ou TO DO. Além da funcionalidade, a qualidade do código será
+monitorada e antes da integração do código haverá uma revisão de código por
+um desenvolvedor diferente do autor.</p>
+
+<h2 id="label-Ferramentas">Ferramentas<span><a href="#label-Ferramentas">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Versionamento de código Git</p>
+</li><li>
+<p>Integração Contínua CircleCI / Github</p>
+</li><li>
+<p>Entrega Contínua CircleCI / Heroku</p>
+</li><li>
+<p>Analisador estático Rubocop</p>
+</li><li>
+<p>Framework de testes Rspec</p>
+</li><li>
+<p>Cobertura de testes Simplecov</p>
+</li></ul>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://rdoc.github.io/rdoc">RDoc</a> 5.0.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
