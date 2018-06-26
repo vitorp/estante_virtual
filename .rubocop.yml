@@ -136,7 +136,3 @@ Lint/ShadowingOuterLocalVariable:
 # Check with yard instead.
 Style/Documentation:
   Enabled: false
-
-# This is just silly. Calling the argument `other` in all cases makes no sense.
-Naming/Binary:OperatorParameterName:
-  Enabled: false
