@@ -25,7 +25,7 @@ RSpec.describe ReviewsController, type: :controller do
   describe "GET #new" do
     subject { get :new, params: {book_id: book.id} }
 
-    it { is_expected.to have_http_status(:success) }
+    it { is_expected.to have_http_status(200) }
   end
 
   describe "POST #create" do

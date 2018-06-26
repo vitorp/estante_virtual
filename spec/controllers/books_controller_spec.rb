@@ -29,7 +29,7 @@ RSpec.describe BooksController, type: :controller do
   describe "GET #new" do
     subject { get :new }
 
-    it { is_expected.to have_http_status(:success) }
+    it { is_expected.to have_http_status(200) }
   end
 
   describe "POST #create" do
@@ -53,7 +53,7 @@ RSpec.describe BooksController, type: :controller do
       controller.login_user(user)
     end
 
-    it { is_expected.to have_http_status(:success) }
+    it { is_expected.to have_http_status(200) }
   end
 
   describe "GET #setup_trade" do
@@ -106,13 +106,13 @@ RSpec.describe BooksController, type: :controller do
   describe "GET #search" do
     subject { get :search, params: {id: book.id} }
 
-    it { is_expected.to have_http_status(:success) }
+    it { is_expected.to have_http_status(200) }
   end
 
   describe "GET #list_search" do
     subject { get :list_search, params: {title: book.title} }
 
-    it { is_expected.to have_http_status(:success) }
+    it { is_expected.to have_http_status(200) }
 
     context "when the book is tradable" do
       before(:each) do
