@@ -13,7 +13,7 @@ class BooksController < ApplicationController
     @book.user = current_user
 
     if @book.save
-      redirect_to @book, notice: "Livro foi cadastrado com sucesso"
+      redirect_to @book, success: "Livro foi cadastrado com sucesso"
     else
       render :new
     end

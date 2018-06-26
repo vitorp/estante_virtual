@@ -2,8 +2,8 @@
   <%= form_with(model: book, local: true) do |form| %>
     <div class="row">
       <% if book.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+        <div class="alert alert-danger col-md-4 offset-md-4" role="alert">
+          <h2><%= pluralize(book.errors.count, "erro") %> <%= "encontrado".pluralize(book.errors.count)%>:</h2>
 
           <ul>
           <% book.errors.full_messages.each do |message| %>

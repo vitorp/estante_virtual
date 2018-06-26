@@ -2,6 +2,8 @@
 
 # Classe controlodora das acoes de usuario
 class UsersController < ApplicationController
+  skip_before_action :verify_logged_in, only: %i[new create]
+
   # Renderiza o form de busca por usuario
   def index
   end
@@ -14,9 +16,12 @@ class UsersController < ApplicationController
   # Adiciona usuario ao banco de dados
   def create
     @user = User.new(user_params)
-    @user.save
-    login_user(@user)
-    redirect_to users_home_path
+    if @user.save
+      login_user(@user)
+      redirect_to users_home_path
+    else
+      render :new
+    end
   end
 
   # Exibe detalhes do usuario de acordo com o parametro :id
