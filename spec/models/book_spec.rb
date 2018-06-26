@@ -14,16 +14,16 @@ RSpec.describe Book, type: :model do
      }}
   let(:user) { User.create(name: "User", nickname: "user_nick", password: "senha", phone: "123456789") }
 
-  it { should belong_to :user }
-  it { should have_many :reviews }
+  it { is_expected.to belong_to :user }
+  it { is_expected.to have_many :reviews }
 
-  it { should validate_uniqueness_of :title }
+  it { is_expected.to validate_uniqueness_of :title }
 
-  it { should validate_presence_of :title }
-  it { should validate_presence_of :author }
-  it { should validate_presence_of :publication_date }
-  it { should validate_presence_of :code }
-  it { should validate_presence_of :genre }
+  it { is_expected.to validate_presence_of :title }
+  it { is_expected.to validate_presence_of :author }
+  it { is_expected.to validate_presence_of :publication_date }
+  it { is_expected.to validate_presence_of :code }
+  it { is_expected.to validate_presence_of :genre }
 
   it "cannot be more than 10 books for a user" do
     book[:user_id] = user.id
