@@ -1,11 +1,14 @@
 # frozen_string_literal: true
 
+# Classe controladora responsável pelas ações das resenhas
 class ReviewsController < ApplicationController
+  # Renderiza form de nova resenha
   def new
     @book = Book.find(params[:book_id])
     @review = Review.new
   end
 
+  # Cadastra nova resenha no banco de dados
   def create
     @review = Review.new(review_params)
     @review.assign_attributes user: current_user, book_id: params[:book_id]
@@ -18,6 +21,7 @@ class ReviewsController < ApplicationController
 
   private
 
+  # Filtro que impede uma requisição com parametros indesejados para usuário
   def review_params
     params.require(:review).permit(:title, :body, :book_id)
   end

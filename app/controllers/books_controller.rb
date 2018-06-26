@@ -1,10 +1,13 @@
 # frozen_string_literal: true
 
+# Classe controladora responsável pelas ações das resenhas
 class BooksController < ApplicationController
+  # Renderiza o form de criação de livro
   def new
     @book = Book.new
   end
 
+  # Cadastra o livro no banco de dados
   def create
     @book = Book.new(book_params)
     @book.user = current_user
@@ -16,6 +19,7 @@ class BooksController < ApplicationController
     end
   end
 
+  # Deleta o livro especificado pelo parametro :id se pertencer ao usuário logado
   def destroy
     book = Book.find(params[:id])
 
@@ -26,21 +30,26 @@ class BooksController < ApplicationController
     end
   end
 
+  # Exibe livro pelo param :id
   def show
     @book = Book.find(params[:id])
   end
 
+  # Busca livros do usuario logado e renderiza estante do usuário
   def shelf
     @books = current_user.books
   end
 
+  # Renderiza formulário de busca de livros
   def search
   end
 
+  # Busca livros pelo titulo e renderiza a lista de livros disponiveis encontrados
   def list_search
     @books = Book.where(tradable: true).where("title LIKE ?", "%#{params[:title]}%")
   end
 
+  # Define atributo :tradable do livro com true
   def setup_trade
     book = Book.find(params[:id])
     book.tradable = true
@@ -52,6 +61,7 @@ class BooksController < ApplicationController
     end
   end
 
+  # Define atributo do livro :tradable como falso
   def remove_trade
     book = Book.find(params[:id])
     book.tradable = false
@@ -65,6 +75,7 @@ class BooksController < ApplicationController
 
   private
 
+  # Filtro que impede uma requisição com parametros que não desejamos para login
   def book_params
     params.require(:book).permit(:title, :author, :publication_date, :code, :genre)
   end
