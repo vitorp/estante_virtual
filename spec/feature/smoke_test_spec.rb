@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe "the login process", type: :system do
+RSpec.describe "the login process", type: :feature do
   before :each do
     User.create(name: "User", nickname: "user_nick", password: "senha", phone: "123456789")
   end
