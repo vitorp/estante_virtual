@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Classe controladora responsável pelas ações das resenhas
+# Classe controladora responsavel pelas acoes das resenhas
 class ReviewsController < ApplicationController
   # Renderiza form de nova resenha
   def new
@@ -21,7 +21,7 @@ class ReviewsController < ApplicationController
 
   private
 
-  # Filtro que impede uma requisição com parametros indesejados para usuário
+  # Filtro que impede uma requisicao com parametros indesejados para usuario
   def review_params
     params.require(:review).permit(:title, :body, :book_id)
   end
