@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "simplecov"
+require "capybara/rspec"
 if ENV["COVERAGE"]
   SimpleCov.start "rails" do
     coverage_dir ENV["COVERAGE_DIR"]

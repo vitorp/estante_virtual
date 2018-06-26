@@ -92,6 +92,8 @@
 
   <section class="description">
     
+<p>Classe</p>
+
   </section>
 
   
@@ -132,7 +134,7 @@
 
           
           <div class="method-source-code" id="current_user-source">
-            <pre><span class="ruby-comment"># File app/controllers/application_controller.rb, line 11</span>
+            <pre><span class="ruby-comment"># File app/controllers/application_controller.rb, line 12</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">current_user</span>
   <span class="ruby-ivar">@current_user</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">session</span>[<span class="ruby-value">:current_user_id</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">User</span>.<span class="ruby-identifier">find_by</span>(<span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">session</span>[<span class="ruby-value">:current_user_id</span>])
 <span class="ruby-keyword">end</span></pre>
@@ -165,7 +167,7 @@
 
           
           <div class="method-source-code" id="login_user-source">
-            <pre><span class="ruby-comment"># File app/controllers/application_controller.rb, line 7</span>
+            <pre><span class="ruby-comment"># File app/controllers/application_controller.rb, line 8</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">login_user</span>(<span class="ruby-identifier">user</span>)
   <span class="ruby-identifier">session</span>[<span class="ruby-value">:current_user_id</span>] = <span class="ruby-identifier">user</span>.<span class="ruby-identifier">id</span>
 <span class="ruby-keyword">end</span></pre>
@@ -198,7 +200,7 @@
 
           
           <div class="method-source-code" id="logout_user-source">
-            <pre><span class="ruby-comment"># File app/controllers/application_controller.rb, line 15</span>
+            <pre><span class="ruby-comment"># File app/controllers/application_controller.rb, line 16</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">logout_user</span>
   <span class="ruby-ivar">@current_user</span> = <span class="ruby-keyword">nil</span>
   <span class="ruby-identifier">session</span>[<span class="ruby-value">:current_user_id</span>] = <span class="ruby-keyword">nil</span>
@@ -232,7 +234,7 @@
 
           
           <div class="method-source-code" id="verify_logged_in-source">
-            <pre><span class="ruby-comment"># File app/controllers/application_controller.rb, line 20</span>
+            <pre><span class="ruby-comment"># File app/controllers/application_controller.rb, line 21</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">verify_logged_in</span>
   <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">login_form_path</span>, <span class="ruby-identifier">error</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;Usuário deve estar logado para realizar essa ação.&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">blank?</span>
 <span class="ruby-keyword">end</span></pre>

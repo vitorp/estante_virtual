@@ -56,6 +56,11 @@
   <h3>Table of Contents</h3>
 
   <ul class="link-list" role="directory">
+    <li><a href="#label-Processo+de+desenvolvimento">Processo de desenvolvimento</a>
+    <li><a href="#label-Ciclo+de+desenvolvimento">Ciclo de desenvolvimento</a>
+    <li><a href="#label-Test+Driven+Development">Test Driven Development</a>
+    <li><a href="#label-M-C3-A9todos+para+garantia+de+qualidade+no+processo+de+desenvolvimento">Métodos para garantia de qualidade no processo de desenvolvimento</a>
+    <li><a href="#label-Ferramentas">Ferramentas</a>
     <li><a href="#label-Fluxograma+de+desenvolvimento">Fluxograma de desenvolvimento</a>
     <li><a href="#label-Fluxograma+de+reuni-C3-A3o">Fluxograma de reunião</a>
   </ul>
@@ -84,27 +89,107 @@
 
 <main role="main" aria-label="Page plans/processo_desenvolvimento.md">
 
+<h2 id="label-Processo+de+desenvolvimento">Processo de desenvolvimento<span><a href="#label-Processo+de+desenvolvimento">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Esse processo de desenvolvimento é embasado na utilização de métodos ágeis
+e desenvolvimento com foco em teste para garantia de qualidade. Utilizando
+como maiores influências SCRUM e TDD (Test driven development) adaptamos as
+suas práticas e principios para melhor suprir nossas necessidades e
+alcançar nossos objetivos.</p>
+
+<h2 id="label-Ciclo+de+desenvolvimento">Ciclo de desenvolvimento<span><a href="#label-Ciclo+de+desenvolvimento">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>O desenvolvimento será dividido em sprints semanais. Para isso será
+realizada uma reunião de sprint toda semana a fim de avaliar o que foi
+feito e planejar a próxima iteração. Através de um Kanban, as tarefas serão
+acompanhadas durante a semana em listas de BACKLOG, TO DO, DOING, REVIEW e
+DONE. As tarefas finalizadas se encontrarão na lista de aceitação, serão
+revisadas na reunião de sprint e movidas para DONE quando terminadas.</p>
+
+<h2 id="label-Test+Driven+Development">Test Driven Development<span><a href="#label-Test+Driven+Development">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>A metodologia do TDD manterá o foco do desenvolvimento em testes. Os testes
+são feitos antes do código propriamente dito para garantir uma maior
+cobertura e incentivar os desenvolvedores a pensarem nos casos limites.</p>
+
+<h2 id="label-M-C3-A9todos+para+garantia+de+qualidade+no+processo+de+desenvolvimento">Métodos para garantia de qualidade no processo de desenvolvimento<span><a href="#label-M-C3-A9todos+para+garantia+de+qualidade+no+processo+de+desenvolvimento">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Para garantia da qualidade quando as tarefas foram elencadas atribui-se a
+elas critérios de aceitação, ou seja, requerimentos de qualidade e
+completude da tarefa. Esses critérios serão revisados na reunião de sprint
+e se satisfeitos a tarefa será movida para DONE, se não, voltará para o
+backlog ou TO DO. Além da funcionalidade, a qualidade do código será
+monitorada e antes da integração do código haverá uma revisão de código por
+um desenvolvedor diferente do autor.</p>
+
+<h2 id="label-Ferramentas">Ferramentas<span><a href="#label-Ferramentas">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Versionamento de código Git</p>
+</li><li>
+<p>Integração Contínua CircleCI / Github</p>
+</li><li>
+<p>Entrega Contínua CircleCI / Heroku</p>
+</li><li>
+<p>Analisador estático Rubocop</p>
+</li><li>
+<p>Framework de testes Rspec</p>
+</li><li>
+<p>Cobertura de testes Simplecov</p>
+</li></ul>
+
 <h1 id="label-Fluxograma+de+desenvolvimento">Fluxograma de desenvolvimento<span><a href="#label-Fluxograma+de+desenvolvimento">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
-<p>Desenvolvimento de funcionalidade:  0. Marcar atividade e mover para DOING 
-1. Criar Branch para Desenvolvimento  2. Elaborar Testes para
-funcionalidade  3. Executar testes para falharem  4. Desenvolver
-funcionalidade  5. Passar Testes  6. Refatoração</p>
+<p>Desenvolvimento de funcionalidade:</p>
+<ol><li>
+<p>Marcar atividade e mover para DOING</p>
+</li><li>
+<p>Criar Branch para Desenvolvimento</p>
+</li><li>
+<p>Elaborar Testes para funcionalidade</p>
+</li><li>
+<p>Executar testes para falharem</p>
+</li><li>
+<p>Desenvolver funcionalidade</p>
+</li><li>
+<p>Passar Testes</p>
+</li><li>
+<p>Refatoração</p>
+</li></ol>
 
-<p>Integração de código:  0. Autor cria pull request  1. Outro desenvolvedor
-revisa o código  2. Se negado autor realiza alterações  3. Se aceito código
-é integrado</p>
+<p>Integração de código:</p>
+<ol><li>
+<p>Autor cria pull request</p>
+</li><li>
+<p>Outro desenvolvedor revisa o código</p>
+</li><li>
+<p>Se negado autor realiza alterações</p>
+</li><li>
+<p>Se aceito código é integrado</p>
+</li></ol>
 
 <h1 id="label-Fluxograma+de+reuni-C3-A3o">Fluxograma de reunião<span><a href="#label-Fluxograma+de+reuni-C3-A3o">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
-<p>Reunião de Sprint  0. Desenvolvedores comentam as principais dificuldades
-durante a sprint  1. Os cards colocados em review são revisados e:  - Se
-completos, são colocados em Done  - Se incompletos, são retornados para o
-Backlog  2. Os cards da tabela de Backlog são avaliados e a sprint é
-montada, levando em consideração:  - Distribuição de tarefas entre os
-desenvolvedores  - Carga de trabalho disponível para os desenvolvedores  -
-Prioridades na cadeia de funcionalidades a serem desenvolvidos  - Cadeia de
-dependências de uma funcionalidade para a outra</p>
+<p>Reunião de Sprint</p>
+<ol><li>
+<p>Desenvolvedores comentam as principais dificuldades durante a sprint</p>
+</li><li>
+<p>Os cards colocados em review são revisados e:</p>
+</li><li>
+<p>Se completos, são colocados em Done</p>
+</li><li>
+<p>Se incompletos, são retornados para o Backlog</p>
+</li><li>
+<p>Os cards da tabela de Backlog são avaliados e a sprint é montada, levando
+em consideração:</p>
+</li><li>
+<p>Distribuição de tarefas entre os desenvolvedores</p>
+</li><li>
+<p>Carga de trabalho disponível para os desenvolvedores</p>
+</li><li>
+<p>Prioridades na cadeia de funcionalidades a serem desenvolvidos</p>
+</li><li>
+<p>Cadeia de dependências de uma funcionalidade para a outra</p>
+</li></ol>
 </main>
 
 

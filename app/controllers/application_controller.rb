@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Classe
 class ApplicationController < ActionController::Base
   helper_method :current_user, :login_user
   before_action :verify_logged_in
