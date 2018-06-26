@@ -63,6 +63,7 @@
     <li><a href="#label-Smoke+test-2C+Testes+de+unidade-2C+integra-C3-A7-C3-A3o+e+sistema">Smoke test, Testes de unidade, integração e sistema</a>
     <li><a href="#label-Estrat-C3-A9gia+de+teste">Estratégia de teste</a>
     <li><a href="#label-Ambiente+de+teste">Ambiente de teste</a>
+    <li><a href="#label-Localiza-C3-A7-C3-A3o+dos+Testes">Localização dos Testes</a>
     <li><a href="#label-Ferramentas+utilizadas">Ferramentas utilizadas</a>
     <li><a href="#label-Artefatos+gerados">Artefatos gerados</a>
     <li><a href="#label-Crit-C3-A9rios+para+aprova-C3-A7-C3-A3o+de+testes">Critérios para aprovação de testes</a>
@@ -127,9 +128,10 @@ apresentação e integração.</p>
 <p>Serão feitos testes de unidade para os models a fim de validar os dominios
 de aplicação. Teste de integraçao controller e model para validar as ações
 do sistema. As views não serão testadas em testes de unidade devido a sua
-volatilidade durante o desenvolvimento. Todavia, existirão testes de
-sistema para as funcionalidades de busca e um smoke test de login. Mais
-testes de sistemas não serão possivel devido as restrições de tempo.</p>
+volatilidade durante o desenvolvimento, mas sua renderização será testada
+em testes de sistema. Existirão tambem testes de sistema para as
+funcionalidades de busca e um smoke test de login. Mais testes de sistemas
+não serão possivel devido as restrições de tempo.</p>
 
 <h2 id="label-Estrat-C3-A9gia+de+teste">Estratégia de teste<span><a href="#label-Estrat-C3-A9gia+de+teste">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
@@ -144,6 +146,14 @@ models para testes de controller seria um esforço desnecessário.</p>
 computador do desenvolvedor. Para integração o ambiente de teste será o
 CircleCI que garante a execução dos testes e armazena os artefatos de teste
 e realizará a entrega continua caso a suite de teste não apresente erros.</p>
+
+<h2 id="label-Localiza-C3-A7-C3-A3o+dos+Testes">Localização dos Testes<span><a href="#label-Localiza-C3-A7-C3-A3o+dos+Testes">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Os testes utilizam o framework RSpec logo se encontra na pasta
+&#39;app/spec&#39; e são subdivididos em pastas: - app/spec/model: Testes
+de model que representam os testes de unidade desse sistema -
+app/spec/controller: Testes de controller que representam os testes de
+integração - app/spec/feature: Testes de sistema e smoke test</p>
 
 <h2 id="label-Ferramentas+utilizadas">Ferramentas utilizadas<span><a href="#label-Ferramentas+utilizadas">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
