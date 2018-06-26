@@ -3,13 +3,13 @@
 require "rails_helper"
 
 RSpec.describe ReviewsController, type: :controller do
-  let!(:user) { User.create(name: "User", nickname: "user_nick", password: "senha", phone: "123456789") }
+  let!(:user) { User.create(name: "User", nickname: "nick", password: "senha", phone: "123456789") }
   let!(:book) {
     Book.create(author:           "Renan",
                 title:            "Titulo",
                 publication_date: Date.new(2015, 11, 23),
-                code:             "codigo",
-                genre:            "genero",
+                code:             "12345",
+                genre:            "CONTO",
                 user_id:          user.id)
   }
   let(:review_params) {

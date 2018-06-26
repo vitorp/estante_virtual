@@ -25,6 +25,10 @@ RSpec.describe Book, type: :model do
   it { is_expected.to validate_presence_of :code }
   it { is_expected.to validate_presence_of :genre }
 
+  it { is_expected.to validate_length_of(:code).is_at_most(5) }
+  it { is_expected.to validate_numericality_of(:code).only_integer }
+  it { is_expected.to validate_inclusion_of(:genre).in_array(%w[EPOPEIA NOVELA CONTO ENSAIO ROMANCE]) }
+
   it "cannot be more than 10 books for a user" do
     book[:user_id] = user.id
     10.times do |i|

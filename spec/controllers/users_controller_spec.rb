@@ -7,7 +7,7 @@ RSpec.describe UsersController, type: :controller do
     {user:
            {name: "Uriel Silva", nickname: "Billy", password: "senha", phone: "999994317"}}
   }
-  let(:user) { User.create(name: "User", nickname: "user_nick", password: "senha", phone: "123456789") }
+  let(:user) { User.create(name: "User", nickname: "nick", password: "senha", phone: "123456789") }
 
   before(:each) do
     controller.login_user(user)

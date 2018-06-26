@@ -8,20 +8,20 @@ RSpec.describe BooksController, type: :controller do
            {author:           "Renan",
             title:            "Titulo",
             publication_date: Date.new(2015, 11, 23),
-            code:             "codigo",
-            genre:            "genero"}}
+            code:             "12345",
+            genre:            "CONTO"}}
   }
 
   let(:book) {
     Book.create(author:           "Renan",
                 title:            "Titulo",
                 publication_date: Date.new(2015, 11, 23),
-                code:             "codigo",
-                genre:            "genero",
+                code:             "21345",
+                genre:            "CONTO",
                 user_id:          user.id)
   }
 
-  let!(:user) { User.create(name: "User", nickname: "user_nick", password: "senha", phone: "123456789") }
+  let!(:user) { User.create(name: "User", nickname: "nick", password: "senha", phone: "123456789") }
   before(:each) do
     controller.login_user(user)
   end
