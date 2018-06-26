@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
     session[:current_user_id] = user.id
   end
 
-  # Retorna usuário armazenado ou busca usuário pelo id armazenado na sessãoptimize
+  # Retorna usuário armazenado ou busca usuário pelo id armazenado na sessão
   # Retorna nil caso nenhum usuário esteja logado
   def current_user
     @current_user ||= session[:current_user_id] && User.find_by(id: session[:current_user_id])

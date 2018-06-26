@@ -86,6 +86,9 @@
 
   <section class="description">
     
+<p>Classe livro responsável pelas validações e relacionamentos dos objetos
+livro</p>
+
   </section>
 
   
@@ -120,13 +123,13 @@
 
         <div class="method-description">
           
-          
+          <p>Validação da quantidade limite de livros pro usuário</p>
           
           
 
           
           <div class="method-source-code" id="book_count-source">
-            <pre><span class="ruby-comment"># File app/models/book.rb, line 15</span>
+            <pre><span class="ruby-comment"># File app/models/book.rb, line 17</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">book_count</span>
   <span class="ruby-identifier">errors</span>.<span class="ruby-identifier">add</span>(<span class="ruby-value">:base</span>, <span class="ruby-string">&quot;Limite de 10 livros cadastrados&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">books</span>.<span class="ruby-identifier">count</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">9</span>
 <span class="ruby-keyword">end</span></pre>

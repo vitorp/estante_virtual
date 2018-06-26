@@ -96,6 +96,8 @@
 
   <section class="description">
     
+<p>Classe controlodora das ações de usuário</p>
+
   </section>
 
   
@@ -130,13 +132,13 @@
 
         <div class="method-description">
           
-          
+          <p>Adiciona usuário ao banco de dados</p>
           
           
 
           
           <div class="method-source-code" id="create-source">
-            <pre><span class="ruby-comment"># File app/controllers/users_controller.rb, line 10</span>
+            <pre><span class="ruby-comment"># File app/controllers/users_controller.rb, line 14</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
   <span class="ruby-ivar">@user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">user_params</span>)
   <span class="ruby-ivar">@user</span>.<span class="ruby-identifier">save</span>
@@ -166,13 +168,13 @@
 
         <div class="method-description">
           
-          
+          <p>Renderiza a home do usuário</p>
           
           
 
           
           <div class="method-source-code" id="home-source">
-            <pre><span class="ruby-comment"># File app/controllers/users_controller.rb, line 30</span>
+            <pre><span class="ruby-comment"># File app/controllers/users_controller.rb, line 37</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">home</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -198,13 +200,13 @@
 
         <div class="method-description">
           
-          
+          <p>Renderiza o form de busca por usuário</p>
           
           
 
           
           <div class="method-source-code" id="index-source">
-            <pre><span class="ruby-comment"># File app/controllers/users_controller.rb, line 3</span>
+            <pre><span class="ruby-comment"># File app/controllers/users_controller.rb, line 5</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">index</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -230,13 +232,13 @@
 
         <div class="method-description">
           
-          
+          <p>Renderiza o form de criação de usuário</p>
           
           
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/controllers/users_controller.rb, line 6</span>
+            <pre><span class="ruby-comment"># File app/controllers/users_controller.rb, line 9</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">new</span>
   <span class="ruby-ivar">@user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">new</span>
 <span class="ruby-keyword">end</span></pre>
@@ -263,13 +265,13 @@
 
         <div class="method-description">
           
-          
+          <p>Busca usuário de acordo com o parametro :nickname</p>
           
           
 
           
           <div class="method-source-code" id="search-source">
-            <pre><span class="ruby-comment"># File app/controllers/users_controller.rb, line 21</span>
+            <pre><span class="ruby-comment"># File app/controllers/users_controller.rb, line 27</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">search</span>
   <span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find_by</span> <span class="ruby-identifier">nickname</span><span class="ruby-operator">:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:nickname</span>]
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">user</span>
@@ -301,13 +303,13 @@
 
         <div class="method-description">
           
-          
+          <p>Exibe detalhes do usuário de acordo com o parametro :id</p>
           
           
 
           
           <div class="method-source-code" id="show-source">
-            <pre><span class="ruby-comment"># File app/controllers/users_controller.rb, line 17</span>
+            <pre><span class="ruby-comment"># File app/controllers/users_controller.rb, line 22</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">show</span>
   <span class="ruby-ivar">@user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
 <span class="ruby-keyword">end</span></pre>

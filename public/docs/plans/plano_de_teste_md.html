@@ -57,11 +57,15 @@
 
   <ul class="link-list" role="directory">
     <li><a href="#label-Plano+de+teste">Plano de teste</a>
-    <li><a href="#label-Escopo">Escopo</a>
+    <li><a href="#label-Introdu-C3-A7-C3-A3o">Introdução</a>
     <li><a href="#label-Objetivos+de+teste">Objetivos de teste</a>
-    <li><a href="#label-Planejamento+de+teste">Planejamento de teste</a>
+    <li><a href="#label-Procedimento+de+teste">Procedimento de teste</a>
+    <li><a href="#label-Smoke+test-2C+Testes+de+unidade-2C+integra-C3-A7-C3-A3o+e+sistema">Smoke test, Testes de unidade, integração e sistema</a>
+    <li><a href="#label-Estrat-C3-A9gia+de+teste">Estratégia de teste</a>
+    <li><a href="#label-Ambiente+de+teste">Ambiente de teste</a>
     <li><a href="#label-Ferramentas+utilizadas">Ferramentas utilizadas</a>
-    <li><a href="#label-Crit-C3-A9rios+de+avalia-C3-A7-C3-A3o">Critérios de avaliação</a>
+    <li><a href="#label-Artefatos+gerados">Artefatos gerados</a>
+    <li><a href="#label-Crit-C3-A9rios+para+aprova-C3-A7-C3-A3o+de+testes">Critérios para aprovação de testes</a>
   </ul>
 </div>
 
@@ -90,7 +94,7 @@
 
 <h1 id="label-Plano+de+teste">Plano de teste<span><a href="#label-Plano+de+teste">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
-<h2 id="label-Escopo">Escopo<span><a href="#label-Escopo">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<h2 id="label-Introdu-C3-A7-C3-A3o">Introdução<span><a href="#label-Introdu-C3-A7-C3-A3o">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>O sistema estante virtual visa prover um meio virtual na web para trocas de
 livros. Apôs se cadastrarem os usuários terão acesso a buscas que visam
@@ -106,34 +110,65 @@ testes devem garantir a funcionalidade do sistema e de suas operações
 principais de acordo com as histórias de usuário e critérios de aceitação
 das mesmas.</p>
 
-<h2 id="label-Planejamento+de+teste">Planejamento de teste<span><a href="#label-Planejamento+de+teste">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<h2 id="label-Procedimento+de+teste">Procedimento de teste<span><a href="#label-Procedimento+de+teste">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<p>Os testes serão divididos em duas etapas: Desenvolvimento e Entrega(Datas
-especificadas no plano de desenvolvimento). Durante o desenvolvimento os
-testes serão realizados antes da implementação da funcionalidade seguindo a
-metodologia TDD. Esses teste terão caráter unitário e servem para garantia
-de qualidade, documentação e para guiar os desenvolvedores durante o
-processo de desenvolvimento. Ao final da implementação de uma
-funcionalidade além dos testes centrais deve-se possuir testes para os
-critérios de aceitação. Na segunda etapa ,a de Entrega, as histórias de
-usuário serão revisadas sobre a perspectiva de apresentação e integração
-utilizando smoke tests.</p>
+<p>Os testes serão divididos em duas etapas: Desenvolvimento e Entrega.
+Durante o desenvolvimento os testes serão realizados antes da implementação
+da funcionalidade seguindo a metodologia TDD. Esses testes terão caráter
+unitário e servem para garantia de qualidade, documentação e para guiar os
+desenvolvedores durante o processo de desenvolvimento. Ao final da
+implementação de uma funcionalidade além dos testes centrais deve-se
+possuir testes para os critérios de aceitação. Na segunda etapa ,a de
+Entrega, as histórias de usuário serão revisadas sobre a perspectiva de
+apresentação e integração.</p>
+
+<h2 id="label-Smoke+test-2C+Testes+de+unidade-2C+integra-C3-A7-C3-A3o+e+sistema">Smoke test, Testes de unidade, integração e sistema<span><a href="#label-Smoke+test-2C+Testes+de+unidade-2C+integra-C3-A7-C3-A3o+e+sistema">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Serão feitos testes de unidade para os models a fim de validar os dominios
+de aplicação. Teste de integraçao controller e model para validar as ações
+do sistema. As views não serão testadas em testes de unidade devido a sua
+volatilidade durante o desenvolvimento. Todavia, existirão testes de
+sistema para as funcionalidades de busca e um smoke test de login. Mais
+testes de sistemas não serão possivel devido as restrições de tempo.</p>
+
+<h2 id="label-Estrat-C3-A9gia+de+teste">Estratégia de teste<span><a href="#label-Estrat-C3-A9gia+de+teste">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>A estratégia utilizada será bottom-up, ou seja, testaremos primeiro os
+models depois os controllers. Escolhemos essa estratégia, pois a
+implementação dos models será simples então o desenvolvimento de stubs de
+models para testes de controller seria um esforço desnecessário.</p>
+
+<h2 id="label-Ambiente+de+teste">Ambiente de teste<span><a href="#label-Ambiente+de+teste">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Durante a etapa de desenvolvimento o ambiente de teste será o próprio
+computador do desenvolvedor. Para integração o ambiente de teste será o
+CircleCI que garante a execução dos testes e armazena os artefatos de teste
+e realizará a entrega continua caso a suite de teste não apresente erros.</p>
 
 <h2 id="label-Ferramentas+utilizadas">Ferramentas utilizadas<span><a href="#label-Ferramentas+utilizadas">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>A cobertura de teste será verificada com a ferramenta “simplecov” que gera
 relatórios do percentual de cobertura total do sistema e discriminada
-também. O Framework de teste utilizado será o “RSPEC” e para analise
+também.O Framework de teste utilizado será o “RSPEC” e para analise
 estática utilizaremos o “Rubocop”. Todas essas ferramentas serão executadas
 na integração continua e com isso existirá um histórico de testes. Por
 ultimo os testes de integração realizados na entrega utilizarão o ambiente
 heroku para simulação de um deploy e acesso de usuário. Por último os smoke
 tests serão realizados utilizando “capybara”.</p>
 
-<h2 id="label-Crit-C3-A9rios+de+avalia-C3-A7-C3-A3o">Critérios de avaliação<span><a href="#label-Crit-C3-A9rios+de+avalia-C3-A7-C3-A3o">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<h2 id="label-Artefatos+gerados">Artefatos gerados<span><a href="#label-Artefatos+gerados">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <ul><li>
-<p>Testes para model, view e controller</p>
+<p>Cobertura de código</p>
 </li><li>
+<p>Resultados de testes</p>
+</li><li>
+<p>Analise estática</p>
+</li><li>
+<p>Analise do CircleCi de sucesso e tempo de build</p>
+</li></ul>
+
+<h2 id="label-Crit-C3-A9rios+para+aprova-C3-A7-C3-A3o+de+testes">Critérios para aprovação de testes<span><a href="#label-Crit-C3-A9rios+para+aprova-C3-A7-C3-A3o+de+testes">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
 <p>Cobertura acima de 80%</p>
 </li><li>
 <p>Casos de testes para critérios de aceitação</p>

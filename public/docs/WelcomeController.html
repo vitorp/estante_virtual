@@ -92,6 +92,9 @@
 
   <section class="description">
     
+<p>Classe controladora responsável pelas ações de controle de acesso e ações
+de usuários não logados no sistema</p>
+
   </section>
 
   
@@ -126,13 +129,13 @@
 
         <div class="method-description">
           
-          
+          <p>Home do sistema primeira página que o usuário entra em contato</p>
           
           
 
           
           <div class="method-source-code" id="home-source">
-            <pre><span class="ruby-comment"># File app/controllers/welcome_controller.rb, line 5</span>
+            <pre><span class="ruby-comment"># File app/controllers/welcome_controller.rb, line 8</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">home</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -158,13 +161,13 @@
 
         <div class="method-description">
           
-          
+          <p>Ação que define o usuário atual de acordo com os parametros post</p>
           
           
 
           
           <div class="method-source-code" id="login-source">
-            <pre><span class="ruby-comment"># File app/controllers/welcome_controller.rb, line 8</span>
+            <pre><span class="ruby-comment"># File app/controllers/welcome_controller.rb, line 12</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">login</span>
   <span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find_by</span>(<span class="ruby-identifier">login_params</span>)
 
@@ -198,13 +201,14 @@
 
         <div class="method-description">
           
-          
+          <p>Filtro que impede uma requisição com parametros que não desejamos para
+login</p>
           
           
 
           
           <div class="method-source-code" id="login_params-source">
-            <pre><span class="ruby-comment"># File app/controllers/welcome_controller.rb, line 24</span>
+            <pre><span class="ruby-comment"># File app/controllers/welcome_controller.rb, line 30</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">login_params</span>
   <span class="ruby-identifier">params</span>.<span class="ruby-identifier">require</span>(<span class="ruby-value">:login</span>).<span class="ruby-identifier">permit</span>(<span class="ruby-value">:nickname</span>, <span class="ruby-value">:password</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -231,13 +235,13 @@
 
         <div class="method-description">
           
-          
+          <p>Termina sessão do usuário logado</p>
           
           
 
           
           <div class="method-source-code" id="logout-source">
-            <pre><span class="ruby-comment"># File app/controllers/welcome_controller.rb, line 19</span>
+            <pre><span class="ruby-comment"># File app/controllers/welcome_controller.rb, line 24</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">logout</span>
   <span class="ruby-identifier">logout_user</span>
   <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">login_form_path</span>, <span class="ruby-identifier">success</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;Você saiu com sucesso&quot;</span>
