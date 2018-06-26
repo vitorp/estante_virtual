@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe "Book create", type: :feature do
+RSpec.describe "Book create feature", type: :feature do
   before :all do
     user = User.create(name: "User", nickname: "nicks", password: "senha", phone: "123456789")
     visit login_form_path
