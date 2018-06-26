@@ -35,7 +35,7 @@
 
       <div class="form-group col-md-6 offset-md-3">
         <%= form.label :genre, 'Gênero' %>
-        <%= form.text_field :genre, class: "form-control" %>
+        <%= select("book", "genre", [["Conto", "CONTO"], ["Ensaio", "ENSAIO"], ["Epopeia", "EPOPEIA"], ["Romance", "ROMANCE"], ["Novela", "NOVELA"]]) %>
       </div>
 
       <div class="form-group col-md-6 offset-md-3">

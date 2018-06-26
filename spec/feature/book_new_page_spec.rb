@@ -17,7 +17,7 @@ RSpec.describe "Book create feature", type: :feature do
     fill_in "book_title", with: "titulo_teste"
     fill_in "book_author", with: "Autor"
     fill_in "book_code", with: "1234"
-    fill_in "book_genre", with: "CONTO"
+    select "Conto", from: "book_genre"
     select "2013", from: "book_publication_date_1i"
     select "January", from: "book_publication_date_2i"
     select "26", from: "book_publication_date_3i"
