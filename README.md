@@ -26,3 +26,4 @@ Na pasta "plans/artifacts" se encontram as imagens, documentos e relatórios que
 - "historico-builds.png" é um gráfico gerado pelo circleCI que nos permite analisar o tempo das builds e a taxa de sucesso
 - "sprint-qs.png" é um imagem que demonstra a utilização do ferramenta trello e como as histórias de usuário foram divididas em sprints.
 - "pullrequest.png" mostra um pullrequest feito durante o desenvolvimento para revisão de código.
+- "estante-virtual-db.png" é uma imagem representativa da modelagem de banco de dados.
