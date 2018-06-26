@@ -1,14 +1,14 @@
-Tue, 26 Jun 2018 14:52:14 -0300
-README.md	Thu, 10 May 2018 15:40:44 -0300
+Tue, 26 Jun 2018 19:29:42 -0300
+README.md	Tue, 26 Jun 2018 17:32:38 -0300
 app/models/application_record.rb	Tue, 26 Jun 2018 14:49:27 -0300
 app/models/book.rb	Tue, 26 Jun 2018 14:49:27 -0300
 app/models/review.rb	Tue, 26 Jun 2018 14:49:27 -0300
 app/models/user.rb	Tue, 26 Jun 2018 14:49:27 -0300
 app/controllers/application_controller.rb	Tue, 26 Jun 2018 14:49:27 -0300
-app/controllers/books_controller.rb	Tue, 26 Jun 2018 14:49:27 -0300
+app/controllers/books_controller.rb	Tue, 26 Jun 2018 16:33:48 -0300
 app/controllers/reviews_controller.rb	Tue, 26 Jun 2018 14:49:27 -0300
-app/controllers/users_controller.rb	Tue, 26 Jun 2018 14:49:27 -0300
+app/controllers/users_controller.rb	Tue, 26 Jun 2018 15:07:23 -0300
 app/controllers/welcome_controller.rb	Tue, 26 Jun 2018 14:49:27 -0300
 plans/plano_de_teste.md	Tue, 26 Jun 2018 14:49:27 -0300
-plans/plano_desenvolvimento.md	Mon, 25 Jun 2018 21:01:16 -0300
+plans/plano_desenvolvimento.md	Tue, 26 Jun 2018 19:27:40 -0300
 plans/processo_desenvolvimento.md	Mon, 25 Jun 2018 21:17:04 -0300

@@ -52,6 +52,17 @@
   </div>
 
   
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Trabalho+Qualidade+de+software">Trabalho Qualidade de software</a>
+    <li><a href="#label-grupo">grupo</a>
+    <li><a href="#label-Acessando+o+sistema">Acessando o sistema</a>
+    <li><a href="#label-Artefatos+comprovando+as+atividades">Artefatos comprovando as atividades</a>
+  </ul>
+</div>
+
 
   <div id="project-metadata">
     <div id="fileindex-section" class="nav-section">
@@ -75,30 +86,67 @@
 
 <main role="main" aria-label="Page README.md">
 
-<h1 id="label-README"><a href="README_md.html">README</a><span><a href="#label-README">&para;</a> <a href="#top">&uarr;</a></span></h1>
+<h1 id="label-Trabalho+Qualidade+de+software">Trabalho Qualidade de software<span><a href="#label-Trabalho+Qualidade+de+software">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
-<p>This <a href="README_md.html">README</a> would normally document whatever
-steps are necessary to get the application up and running.</p>
-
-<p>Things you may want to cover:</p>
+<h3 id="label-grupo">grupo<span><a href="#label-grupo">&para;</a> <a href="#top">&uarr;</a></span></h3>
 <ul><li>
-<p>Ruby version</p>
+<p>Vítor passos Pontes matricula: 13/0137421</p>
 </li><li>
-<p>System dependencies</p>
+<p>Renan rocha reboredo matricula: 13/0131865</p>
+</li></ul>
+
+<p>Nosso grupo optou pelo trabalho 2 no qual foi desenvolvido um sistema de
+software com enfoque em teste. Para isso utilizamos da linguagem rails com
+framework ruby on rails. O código se encontra em &#39;app/models&#39; para
+os modelos de dado, &#39;app/controllers&#39; para as controladoras que
+recebem as requisições e &#39;app/views&#39; para os htmls que serão
+gerados. Os testes se encontram na pasta &#39;spec/&#39; sendo
+&#39;spec/models&#39; os testes de unidade, &#39;spec/controllers&#39; os
+de integração e &#39;specs/feature&#39; para testes de sistema e smoke
+test, maiores explicações no plano de teste.</p>
+
+<h2 id="label-Acessando+o+sistema">Acessando o sistema<span><a href="#label-Acessando+o+sistema">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Caso ruby, bundler e postgres estejam instalados e configurados para subir
+o servidor é necessário executar os seguintes comandos <code> bundle
+install rails db:create rails db:migrate rails server </code> O ultimo
+comando irá rodar o servidor. Devido a complexidade de configurar o
+ambiente o grupo hospedou o sistema num servidor que pode ser acessado pelo
+link “<a
+href="https://estante-virtual-qs.herokuapp.com">estante-virtual-qs.herokuapp.com</a>”.</p>
+
+<p>A documentação pode ser acessada em “<a
+href="https://estante-virtual-qs.herokuapp.com/docs/index.html">estante-virtual-qs.herokuapp.com/docs/index.html</a>”
+ou localmente abrindo o arquivo “public/docs/index.html” em um browser.
+Nessa página no fim do menu esquerdo se encontram os arquivos
+“plano_de_teste”, “plano_desenvolvimento” e “processo_desenvolvimento” como
+especificados pelo trabalho. Na seção do menu “Class and module index” é
+possivel acessar as classes do suas respectivas documentações. Também é
+possivel acessar o relatório da cobertura de testes em “<a
+href="https://estante-virtual-qs.herokuapp.com/coverage/index.html">estante-virtual-qs.herokuapp.com/coverage/index.html</a>”</p>
+
+<h1 id="label-Artefatos+comprovando+as+atividades">Artefatos comprovando as atividades<span><a href="#label-Artefatos+comprovando+as+atividades">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>Na pasta “plans/artifacts” se encontram as imagens, documentos e relatórios
+que comprovam suas respectivas atividades:</p>
+<ul><li>
+<p>“ci-cd.png” Print do serviço circleCi que nos permite fazer integração e
+entrega continua. Os itens verdes obtiveram sucesso na suite de teste e
+realizam um deploy. Os itens vermelhos falharam a teste suite, analise
+estática e não sofreram deploy. Cada execução gera relatórios de testes
+sucedidos e quebras de padrão que ficam armazenados no circleCI.</p>
 </li><li>
-<p>Configuration</p>
+<p>“historico-builds.png” é um gráfico gerado pelo circleCI que nos permite
+analisar o tempo das builds e a taxa de sucesso</p>
 </li><li>
-<p>Database creation</p>
+<p>“sprint-qs.png” é um imagem que demonstra a utilização do ferramenta trello
+e como as histórias de usuário foram divididas em sprints.</p>
 </li><li>
-<p>Database initialization</p>
+<p>“pullrequest.png” mostra um pullrequest feito durante o desenvolvimento
+para revisão de código.</p>
 </li><li>
-<p>How to run the test suite</p>
-</li><li>
-<p>Services (job queues, cache servers, search engines, etc.)</p>
-</li><li>
-<p>Deployment instructions</p>
-</li><li>
-<p>...</p>
+<p>“estante-virtual-db.png” é uma imagem representativa da modelagem de banco
+de dados.</p>
 </li></ul>
 </main>
 
