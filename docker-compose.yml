@@ -1,0 +1,26 @@
+version: '3'
+services:
+  web:
+    build:
+      dockerfile:  ./docker/rails.dockerfile
+      context: .
+    image: vitorp/rails
+    container_name: estante-web
+    ports:
+      - "3000:3000"
+    networks:
+      - estante-network
+    depends_on:
+      - db
+    volumes:
+      - ".:/estante_virtual"
+  db:
+    image: postgres:9.4
+    container_name: meu-postgres
+    volumes:
+      - "./db-data:/var/lib/postgresql/data"
+    networks:
+      - estante-network
+networks:
+  estante-network:
+    driver: bridge
